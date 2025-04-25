@@ -1,11 +1,9 @@
 
-import { MdOutlineVerifiedUser } from 'react-icons/md';
-import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
-import { FiUsers } from "react-icons/fi";
-import { BiCoinStack } from "react-icons/bi";
-import { MdTerminal } from "react-icons/md";
-import { PiSparkleLight } from "react-icons/pi";
+import { FiGlobe, FiUsers } from "react-icons/fi";
 import SectionHeader from '@/components/SharedComponent/SectionHeader/SectionHeader';
+import { FaGraduationCap, FaRegHeart } from 'react-icons/fa';
+import { BsEmojiSmile } from "react-icons/bs";
+import { AiOutlineMessage } from "react-icons/ai";
 
 const CoreValues = () => {
     const sectionHeaderData = {
@@ -18,39 +16,39 @@ const CoreValues = () => {
     const services = [
         {
             id: 1,
-            title: "Maximum security",
-            description: "Rest assured, our top-tier security features keep your data and user information locked down.",
-            icon: <MdOutlineVerifiedUser />
+            title: "Work-life balance",
+            description: "Promoting a healthy equilibrium between work and personal life.",
+            icon: <FaRegHeart />
         },
         {
             id: 2,
-            title: "Seamless integration",
-            description: "No app is an island. Connect effortlessly to external services, databases, and tools.",
-            icon: <HiOutlineSquare3Stack3D />
-        },
-        {
-            id: 3,
-            title: "Build for developers",
-            description: "We offer a wealth of developer-friendly resources, including robust documentation and support.",
-            icon: <MdTerminal />
-        },
-        {
-            id: 4,
-            title: "Team collaboration",
-            description: "Our framework fosters teamwork, allowing developers to work seamlessly together.",
+            title: "Collaboration",
+            description: "Open communication to achieve shared goals and great success.",
             icon: <FiUsers />
         },
         {
+            id: 3,
+            title: "Continuous learning",
+            description: "Encouraging professional growth, fostering a culture of curiosity.",
+            icon: <FaGraduationCap />
+        },
+        {
+            id: 4,
+            title: "Fun and enjoyment",
+            description: "Promoting a enjoyable work environment that fosters creativity.",
+            icon: <BsEmojiSmile />
+        },
+        {
             id: 5,
-            title: "Data-driven",
-            description: "Drive your app's success with data-backed decisions and achieve your goals.",
-            icon: <BiCoinStack />
+            title: "Open communication",
+            description: "Encouraging clearly transparent communication at all levels.",
+            icon: <AiOutlineMessage />
         },
         {
             id: 6,
-            title: "Powered by AI",
-            description: "Our AI feature analyzes data, predicts trends, and provides insights that empower you.",
-            icon: <PiSparkleLight />
+            title: "Social impact",
+            description: "Making a positive difference in society by addressing social issues.",
+            icon: <FiGlobe />
         },
 
     ]

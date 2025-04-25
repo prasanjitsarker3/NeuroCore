@@ -74,7 +74,7 @@ const HeroIntegrations = () => {
     ];
 
     return (
-        <div className="max-w-[1250px] mx-auto px-4 pt-10 md:pt-20">
+        <div className="max-w-[1250px] mx-auto px-4 pt-10 md:pt-40">
             <PageHeader pageHeaderData={pageHeaderData} />
             <div className="max-w-xl mx-auto pt-10">
                 <div className="w-full md:w-11/12 mx-auto">

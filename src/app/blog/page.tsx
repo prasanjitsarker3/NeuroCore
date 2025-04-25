@@ -85,10 +85,10 @@ const page = () => {
     ]
 
     return (
-        <div className="bg-[#060f11]">
-            <div className="max-w-[1250px] mx-auto px-4">
+        <div className="bg-[#060f11] -mt-20">
+            <div className="max-w-[1250px] mx-auto px-4 pt-20">
                 <div className="pb-16 pt-5 flex justify-between items-center w-full">
-                    <h4 className="text-[#adff85] font-robotoMono font-bold">Blog</h4>
+                    <h4 className="text-[#adff85] hidden md:block font-robotoMono font-bold">Blog</h4>
                     <div className="flex gap-4">
                         {
                             blogCategories.map(category => <Link key={category.id} href={category.title} className="text-gray-400 hover:text-white transition-colors duration-300 font-robotoMono font-bold text-sm uppercase">{category.title}</Link>)

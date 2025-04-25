@@ -54,7 +54,7 @@ const FrameworkService = () => {
     ]
     return (
         <div>
-            <div className='flex items-center justify-between'>
+            <div className='flex flex-col md:flex-row gap-10 items-center justify-between'>
                 <div className="w-full md:w-2/3">
                     <SectionHeader sectionHeaderData={sectionHeaderData} />
                 </div>

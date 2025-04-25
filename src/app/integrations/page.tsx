@@ -6,7 +6,7 @@ import IntegratorService from "@/components/IntegrationsComponents/IntegratorSer
 const integrations = () => {
 
     return (
-        <div className="bg-[#060f11]">
+        <div className="bg-[#060f11] -mt-20">
             <HeroIntegrations />
             <div className="max-w-[1250px] mx-auto px-4 pt-10 md:pt-20">
                 <IntegratorService />
