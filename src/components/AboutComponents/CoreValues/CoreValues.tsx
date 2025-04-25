@@ -1,18 +1,20 @@
-import SectionHeader from '@/components/SharedComponent/SectionHeader/SectionHeader';
-import { MdOutlineKeyboardArrowRight, MdOutlineVerifiedUser } from 'react-icons/md';
+
+import { MdOutlineVerifiedUser } from 'react-icons/md';
 import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
 import { FiUsers } from "react-icons/fi";
 import { BiCoinStack } from "react-icons/bi";
 import { MdTerminal } from "react-icons/md";
 import { PiSparkleLight } from "react-icons/pi";
+import SectionHeader from '@/components/SharedComponent/SectionHeader/SectionHeader';
 
-const FrameworkService = () => {
+const CoreValues = () => {
     const sectionHeaderData = {
-        sectionName: "Features",
-        sectionTitle: "Simple framework for your business that just works",
-        sectionDescription: "Unlike traditional frameworks, we believe that randomness can lead to breakthroughs, unconventional ideas, and novel solutions.",
-        isCentered: false,
+        sectionName: "About us",
+        sectionTitle: "Our core values",
+        sectionDescription: "We believe in forging strong relationships with our customers, partners, and employees, based on trust and mutual respect.",
+        isCentered: true,
     }
+
     const services = [
         {
             id: 1,
@@ -52,17 +54,12 @@ const FrameworkService = () => {
         },
 
     ]
+
     return (
         <div>
-            <div className='flex items-center justify-between'>
-                <div className="w-full md:w-2/3">
-                    <SectionHeader sectionHeaderData={sectionHeaderData} />
-                </div>
-                <div className='px-4'>
-                    <button className="flex justify-center items-center cursor-pointer rounded-xl px-6 py-3 text-sm font-medium uppercase border border-[#c2f3a92a] bg-[#c2f3a90a] text-white shadow-sm font-robotoMono hover:text-[#9fec78]">Explore Features <MdOutlineKeyboardArrowRight className='text-xl' /> </button>
-                </div>
+            <div className='max-w-xl mx-auto'>
+                <SectionHeader sectionHeaderData={sectionHeaderData} />
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 mt-10 py-10">
                 {
                     services.map(service => <div key={service.id} className='py-5'>
@@ -72,7 +69,7 @@ const FrameworkService = () => {
                             </p>
                         </div>
                         <h4 className='font-robotoMono py-4'>{service.title}</h4>
-                        <p className='font-roboto text-gray-400'>{service.description}</p>
+                        <p className='font-roboto text-gray-400 w-11/12'>{service.description}</p>
                     </div>)
                 }
             </div>
@@ -80,4 +77,4 @@ const FrameworkService = () => {
     );
 };
 
-export default FrameworkService;
+export default CoreValues;

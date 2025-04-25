@@ -36,7 +36,7 @@ const Blog = () => {
     ]
     return (
         <div>
-            <div className="w-full md:w-1/2 mx-auto">
+            <div className="max-w-xl mx-auto">
                 <SectionHeader sectionHeaderData={sectionHeaderData} />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 mt-10">

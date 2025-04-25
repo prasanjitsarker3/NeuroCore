@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
     const [activeTab, setActiveTab] = useState<string>('React');
 
     return (
-        <section className="relative bg-gradient-to-b from-[#0a0a0a] to-[#0f2c1fa9] text-white pt-20 pb-5">
+        <section className="relative bg-gradient-to-b from-[#0a0a0a] to-[#0f2c1fa9] text-white pt-20 pb-5 border-b border-[#c2f3a92a]">
             {/* Header */}
             <div className="max-w-[1250px] mx-auto px-4">
                 <div className='flex flex-col md:flex-row items-center justify-between'>
@@ -66,68 +66,66 @@ const Hero: React.FC = () => {
                                 <span className='border-l-2 border-[#adff85] h-4 w-0.5'></span> <span>Watch our event</span> <FaArrowRight />
                             </p>
                         </div>
-                        <h1 className="text-5xl font-bold py-5 leading-tight">
+                        <h1 className="text-3xl md:text-5xl font-bold py-5 leading-tight">
                             Build new products <br />
-                            <span className="text-[#adff85] flex">
-                                for &nbsp; <TypewriterComponent
+                            <p className="text-[#adff85] flex">
+                                <span className='text-white'>for</span> &nbsp; <TypewriterComponent
                                     options={{
                                         strings: ['developers', 'startups', "customers"],
                                         autoStart: true,
                                         loop: true,
                                     }}
                                 />
-                            </span>
+                            </p>
                         </h1>
-                        <p className="text-gray-400 mb-6 max-w-md">
+                        <p className="text-gray-300 text-lg font-roboto mb-6 max-w-md">
                             Our framework component is built to handle scaling demands with agility. Lightning-fast performance is our promise.
                         </p>
 
                         {/* Buttons */}
-                        <div className="mt-8 flex flex-col md:flex-row gap-4">
+                        <div className="py-10 flex gap-4">
                             <Link
                                 href="/signup"
                                 className="flex justify-center items-center rounded-xl bg-[#adff85] px-6 py-3 text-sm font-medium text-black shadow-sm font-robotoMono hover:bg-[#9fec78]"
                             >GET STARTED <MdOutlineKeyboardArrowRight className='text-xl' /> </Link>
                             <Link
                                 href="/contact"
-                                className="flex justify-center items-center rounded-xl bg-transparent px-6 py-3 text-sm font-medium text-white hover:text-[#adff85] font-robotoMono">
+                                className="flex justify-center items-center rounded-xl bg-transparent px-6 py-3 text-sm font-medium text-white hover:text-[#adff85] font-robotoMono z-10">
                                 LEARN MORE <MdOutlineKeyboardArrowRight className='text-xl' />
                             </Link>
                         </div>
                     </div>
                     {/* Code Tabs */}
-                    <div className="border border-[#c2f3a92a] bg-[#c2f3a90a] rounded-lg shadow-lg w-full md:w-1/3">
-                        <div className="p-4 flex gap-6 border-b border-[#c2f3a92a] pb-3 mb-4 text-sm">
+                    <div className="border overflow-hidden border-[#c2f3a92a] bg-[#c2f3a90a] rounded-lg shadow-lg w-full md:w-1/3 z-10">
+                        <div className="flex justify-between items-center border-b border-[#c2f3a92a] text-sm">
                             {['React', 'Angular', 'CSS', 'Saas'].map(tab => (
-                                <button
-                                    key={tab}
-                                    onClick={() => setActiveTab(tab)}
-                                    className={`pb-1 transition-all cursor-pointer ${activeTab === tab
-                                        ? 'text-white'
-                                        : 'text-gray-400'
-                                        }`}
-                                >
-                                    {tab}
-                                </button>
+                                <div onClick={() => setActiveTab(tab)} className={`w-full border-r border-[#c2f3a92a] last:border-0`} key={tab}>
+                                    <button
+                                        className={`w-full p-4 transition-all cursor-pointer ${activeTab === tab ? 'text-white bg-[#c2f3a92d]' : 'text-gray-400'}`}>
+                                        {tab}
+                                    </button>
+                                </div>
                             ))}
                         </div>
 
                         <pre className="p-4 text-green-300 text-sm overflow-x-auto whitespace-pre-wrap">
-                            {codeSnippets[activeTab]}
+                            <code>
+                                {codeSnippets[activeTab]}
+                            </code>
                         </pre>
 
                         <div className='flex justify-between items-center p-4 border-t border-[#c2f3a92a]'>
-                            <div className="text-sm flex gap-2 text-gray-400 hover:text-white transition-all duration-500 cursor-pointer">Documentation <MdOutlineKeyboardArrowRight className='text-xl' /></div>
+                            <div className="text-sm flex justify-center gap-2 text-gray-400 hover:text-white transition-all duration-500 z-10 cursor-pointer">Documentation <MdOutlineKeyboardArrowRight className='text-xl' /></div>
                             <FiCopy className='text-gray-400 hover:text-white transition-all duration-500 cursor-pointer' />
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-16">
+                <div className="mt-32 z-10">
                     <Partners />
                 </div>
             </div>
-            <div className='absolute bottom-0 left-1/5'>
+            <div className='absolute bottom-0 left-1/5 z-0'>
                 <figure>
                     <Image
                         src={glowImage}
