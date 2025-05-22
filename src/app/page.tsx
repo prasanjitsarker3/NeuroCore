@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="bg-[#060f11]">
       <Hero />
-      <div className="max-w-[1250px] mx-auto px-4 pt-10 md:pt-20">
+      <div className=" max-w-6xl mx-auto px-2 pt-10 md:pt-20">
         <FrameworkService />
         <Highlights />
       </div>
@@ -18,7 +18,7 @@ export default function Home() {
         <Features />
       </div>
       <Testimonials />
-      <div className="max-w-[1250px] mx-auto px-4 pt-10 md:pt-20">
+      <div className="max-w-6xl mx-auto px-4 pt-10 md:pt-20">
         <Blog />
         <CTASection />
       </div>

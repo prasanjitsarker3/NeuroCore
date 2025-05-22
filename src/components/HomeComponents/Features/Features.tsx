@@ -32,8 +32,6 @@ const Features = () => {
 
       title: "Scan for Threats",
       component: <RadarScan />,
-      description:
-        "Identify and mitigate potential security risks and vulnerabilities.",
     },
     {
       id: 3,
