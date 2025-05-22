@@ -1,6 +1,7 @@
 import Blog from "@/components/HomeComponents/Blog/Blog";
 import CTASection from "@/components/HomeComponents/CTASection/CTASection";
 import Features from "@/components/HomeComponents/Features/Features";
+import PowerfullFeatures from "@/components/HomeComponents/Features/PowerfullFeatures/PowerfullFeatures";
 import FrameworkService from "@/components/HomeComponents/FrameworkService/FrameworkService";
 import Hero from "@/components/HomeComponents/Hero/Hero";
 import Highlights from "@/components/HomeComponents/Highlights/Highlights";
@@ -16,6 +17,7 @@ export default function Home() {
       </div>
       <div className="max-w-6xl mx-auto px-4">
         <Features />
+        <PowerfullFeatures />
       </div>
       <Testimonials />
       <div className="max-w-[1250px] mx-auto px-4 pt-10 md:pt-20">
