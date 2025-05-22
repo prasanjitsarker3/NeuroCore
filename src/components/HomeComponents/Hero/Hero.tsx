@@ -1,142 +1,178 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import glowImage from "@/assets/images/glow.avif"
-import Image from 'next/image';
-import Link from 'next/link';
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import { useState } from "react";
+import Link from "next/link";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
-import TypewriterComponent from 'typewriter-effect';
-import { FiCopy } from "react-icons/fi";
-import Partners from './Partners/Partners';
+import TypewriterComponent from "typewriter-effect";
+import { motion, AnimatePresence } from "framer-motion";
 
-const codeSnippets: Record<string, string> = {
-    React: `import React from 'react';
-class component extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>codepunk</h1>
-        <p>This is a simple React component.</p>
-      </div>
-    );
-  }
-}
-export default codepunk;`,
-
-    Angular: `import { Component } from '@angular/core';
-@Component({
-  selector: 'app-root',
-  template: \`
-    <h1>codepunk</h1>
-    <p>This is a simple Angular component.</p>
-  \`
-})
-export class AppComponent {}`,
-
-    CSS: `h1 {
-  color: #00ff99;
-  font-size: 2rem;
-}
-p {
-  color: #ccc;
+const technologies = [
+  {
+    id: "nextjs",
+    name: "Next.js",
+    code: `// app/page.tsx
+export default function Home() {
+  return (
+    <main className="text-center">
+      <h1>👋 Welcome to DevWave</h1>
+      <p>Empowering developers with cutting-edge web solutions.</p>
+    </main>
+  );
 }`,
+  },
+  {
+    id: "nodejs",
+    name: "Node.js",
+    code: `// server.js
+import express from 'express';
+const app = express();
+const PORT = 4000;
 
-    Saas: `$primary-color: #00ff99;
-h1 {
-  color: $primary-color;
-  font-size: 2rem;
-}
-p {
-  color: lighten($primary-color, 40%);
-}`
-};
+app.get('/', (req, res) => {
+  res.send('🚀 Server is live on port ' + PORT);
+});
+
+app.listen(PORT, () => {
+  console.log(\`✅ Node.js server running at http://localhost:\${PORT}\`);
+});`,
+  },
+  {
+    id: "sql",
+    name: "SQL",
+    code: `-- INNER JOIN: Get posts with author info
+SELECT u.name, p.title 
+FROM users u
+INNER JOIN posts p ON u.id = p.user_id;
+
+-- OUTER JOIN: All users, even if no posts
+SELECT u.name, p.title 
+FROM users u
+LEFT JOIN posts p ON u.id = p.user_id;`,
+  },
+  {
+    id: "ai",
+    name: "AI",
+    code: `// Prompt + Model
+import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai';
+
+const response = await generateText({
+  model: openai('gpt-4o'),
+  prompt: "Train an AI model to analyze reviews",
+});
+console.log("🧠 AI Response:", response.text);`,
+  },
+  {
+    id: "python",
+    name: "Python",
+    code: `# Connect AI model with DB
+import sqlite3
+from sklearn.linear_model import LogisticRegression
+
+conn = sqlite3.connect('data.db')
+data = conn.execute("SELECT * FROM users").fetchall()
+
+model = LogisticRegression()
+model.fit([[u[1]] for u in data], [u[2] for u in data])
+
+print("✅ Model trained with database data")`,
+  },
+];
 
 const Hero: React.FC = () => {
-    const [activeTab, setActiveTab] = useState<string>('React');
+  const [activeTab, setActiveTab] = useState("nextjs");
 
-    return (
-        <section className="relative bg-gradient-to-b from-[#0a0a0a] to-[#0f2c1fa9] text-white pt-20 pb-5 border-b border-[#c2f3a92a]">
-            {/* Header */}
-            <div className="max-w-[1250px] mx-auto px-4">
-                <div className='flex flex-col md:flex-row items-center justify-between'>
-                    <div className='w-full md:w-2/3'>
-                        <div>
-                            <p className="text-[#adff85] hover:text-white transition-all duration-500 font-robotoMono flex items-center gap-3 cursor-pointer">
-                                <span className='border-l-2 border-[#adff85] h-4 w-0.5'></span> <span>Watch our event</span> <FaArrowRight />
-                            </p>
-                        </div>
-                        <h1 className="text-3xl md:text-5xl font-bold py-5 leading-tight">
-                            Build new products <br />
-                            <p className="text-[#adff85] flex">
-                                <span className='text-white'>for</span> &nbsp; <TypewriterComponent
-                                    options={{
-                                        strings: ['developers', 'startups', "customers"],
-                                        autoStart: true,
-                                        loop: true,
-                                    }}
-                                />
-                            </p>
-                        </h1>
-                        <p className="text-gray-300 text-lg font-roboto mb-6 max-w-md">
-                            Our framework component is built to handle scaling demands with agility. Lightning-fast performance is our promise.
-                        </p>
+  return (
+    <section className=" text-white pt-10">
+      {/* Header */}
+      <div className=" max-w-6xl mx-auto px-2">
+        <div className=" grid grid-cols-12 gap-6">
+          <div className=" col-span-7">
+            <div>
+              <p className=" text-amber-400 hover:text-white transition-all duration-500 font-robotoMono flex items-center gap-3 cursor-pointer">
+                <span className="border-l-2 border-amber-400 h-4 w-0.5"></span>{" "}
+                <span>Watch our event</span> <FaArrowRight />
+              </p>
+            </div>
+            <h1 className="text-3xl md:text-5xl font-bold py-5 leading-tight">
+              Build new products <br />
+              <p className="text-amber-400 flex">
+                <span className="text-white">for</span> &nbsp;{" "}
+                <TypewriterComponent
+                  options={{
+                    strings: ["developers", "startups", "customers"],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </p>
+            </h1>
+            <p className="text-gray-300 text-lg font-roboto mb-6 max-w-md">
+              Our framework component is built to handle scaling demands with
+              agility. Lightning-fast performance is our promise.
+            </p>
 
-                        {/* Buttons */}
-                        <div className="py-10 flex gap-4">
-                            <Link
-                                href="/signup"
-                                className="flex justify-center items-center rounded-xl bg-[#adff85] px-6 py-3 text-sm font-medium text-black shadow-sm font-robotoMono hover:bg-[#9fec78]"
-                            >GET STARTED <MdOutlineKeyboardArrowRight className='text-xl' /> </Link>
-                            <Link
-                                href="/contact"
-                                className="flex justify-center items-center rounded-xl bg-transparent px-6 py-3 text-sm font-medium text-white hover:text-[#adff85] font-robotoMono z-10">
-                                LEARN MORE <MdOutlineKeyboardArrowRight className='text-xl' />
-                            </Link>
-                        </div>
-                    </div>
-                    {/* Code Tabs */}
-                    <div className="border overflow-hidden border-[#c2f3a92a] bg-[#c2f3a90a] rounded-lg shadow-lg w-full md:w-1/3 z-10">
-                        <div className="flex justify-between items-center border-b border-[#c2f3a92a] text-sm">
-                            {['React', 'Angular', 'CSS', 'Saas'].map(tab => (
-                                <div onClick={() => setActiveTab(tab)} className={`w-full border-r border-[#c2f3a92a] last:border-0`} key={tab}>
-                                    <button
-                                        className={`w-full p-4 transition-all cursor-pointer ${activeTab === tab ? 'text-white bg-[#c2f3a92d]' : 'text-gray-400'}`}>
-                                        {tab}
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
+            {/* Buttons */}
+            <div className="py-10 flex gap-4">
+              <Link
+                href="/signup"
+                className="flex justify-center items-center rounded-xl bg-white/5 px-6 py-2 text-sm font-medium text-white hover:text-amber-400 font-robotoMono z-10"
+              >
+                GET STARTED <MdOutlineKeyboardArrowRight className="text-xl" />{" "}
+              </Link>
+            </div>
+          </div>
+          {/* Code Tabs */}
+          <div className=" col-span-5 border overflow-hidden border-[#c2f3a92a] bg-[#c2f3a90a] rounded-lg shadow-md z-10">
+            <div className="grid grid-cols-5 ">
+              {technologies.map((tech) => (
+                <button
+                  key={tech.id}
+                  onClick={() => setActiveTab(tech.id)}
+                  className={`py-3 px-2 text-sm font-medium transition-colors border-b border-[#c2f3a92a] ${
+                    activeTab === tech.id
+                      ? " bg-white/10 text-white "
+                      : " bg-[#c2f3a90a] text-white"
+                  }`}
+                >
+                  {tech.name}
+                </button>
+              ))}
+            </div>
 
-                        <pre className="p-4 text-green-300 text-sm overflow-x-auto whitespace-pre-wrap">
-                            <code>
-                                {codeSnippets[activeTab]}
-                            </code>
+            {/* Tab content with animations */}
+            <div className="relative h-[400px] overflow-hidden scrollbar-hide">
+              <AnimatePresence mode="wait">
+                {technologies.map(
+                  (tech) =>
+                    tech.id === activeTab && (
+                      <motion.div
+                        key={tech.id}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{
+                          duration: 0.3,
+                          ease: "easeInOut",
+                        }}
+                        className="absolute inset-0"
+                      >
+                        <pre className="text-sm p-4 h-full overflow-auto scrollbar-hide">
+                          <code className="font-mono text-white">
+                            {tech.code}
+                          </code>
                         </pre>
-
-                        <div className='flex justify-between items-center p-4 border-t border-[#c2f3a92a]'>
-                            <div className="text-sm flex justify-center gap-2 text-gray-400 hover:text-white transition-all duration-500 z-10 cursor-pointer">Documentation <MdOutlineKeyboardArrowRight className='text-xl' /></div>
-                            <FiCopy className='text-gray-400 hover:text-white transition-all duration-500 cursor-pointer' />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="mt-32 z-10">
-                    <Partners />
-                </div>
+                      </motion.div>
+                    )
+                )}
+              </AnimatePresence>
             </div>
-            <div className='absolute bottom-0 left-1/5 z-0'>
-                <figure>
-                    <Image
-                        src={glowImage}
-                        alt="Bottom Circle"
-                        className="w-full h-full object-cover"
-                        width={650} height={200}
-                    />
-                </figure>
-            </div>
-        </section>
-    );
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Hero;
