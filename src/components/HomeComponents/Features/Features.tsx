@@ -54,13 +54,12 @@ const Features = () => {
   ];
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
+    <div className="">
       <div className="my-10">
         <SectionHeader sectionHeaderData={sectionHeaderData} />
       </div>
 
       <main className="grid gap-6">
-        {/* Top section with two features */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {featuresData.slice(0, 2).map((feature, index) => {
             const colSpanClass =
@@ -71,23 +70,16 @@ const Features = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className={`${colSpanClass} col-span-1 bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-emerald-900/50`}
+                className={`${colSpanClass} col-span-1 bg-[#c4ecb00a] p-5 rounded-xl `}
               >
                 {feature.component}
-                <div className="flex items-center gap-2 mb-4">
-                  <h2 className="text-xl font-semibold">{feature.title}</h2>
-                </div>
-                {feature.description && (
-                  <p className="mt-4 text-sm text-gray-300">
-                    {feature.description}
-                  </p>
-                )}
               </motion.div>
             );
           })}
         </div>
 
         {/* Remaining features */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuresData.slice(2).map((feature, index) => (
             <motion.div
@@ -95,17 +87,14 @@ const Features = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-emerald-900/50"
+              className="bg-[#c4ecb00a] p-6 rounded-xl flex flex-col"
             >
-              {feature.component}
-              <div className="flex items-center gap-2 mb-4">
-                <h2 className="text-xl font-semibold">{feature.title}</h2>
+              <div className="flex-grow">{feature.component}</div>
+              <div className="mt-auto">
+                <h1 className="text-center text-[#FF5F1F]/70 text-lg font-medium border-0 bg-none">
+                  {feature.title}
+                </h1>
               </div>
-              {feature.description && (
-                <p className="mt-4 text-sm text-gray-300">
-                  {feature.description}
-                </p>
-              )}
             </motion.div>
           ))}
         </div>

@@ -20,42 +20,52 @@ const PowerfullFeatures = () => {
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
   const faqs = [
     {
       question: "What is your refund policy?",
       answer:
-        "We offer full refunds within 30 days of purchase.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "We offer full refunds within 30 days of purchase. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      image: analyticalImage,
     },
     {
       question: "How do I change my password?",
       answer:
-        "Go to account settings and click on 'Change Password'.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Go to account settings and click on 'Change Password'. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      image: analyticalImage,
     },
     {
       question: "Do you offer support?",
       answer:
-        "Yes, we provide 24/7 customer support via chat and email.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Yes, we provide 24/7 customer support via chat and email. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      image: analyticalImage,
     },
     {
-      question: "Do you offer support?",
+      question: "Is data backed up regularly?",
       answer:
-        "Yes, we provide 24/7 customer support via chat and email.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Yes, your data is automatically backed up daily to ensure minimal loss. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      image: analyticalImage,
+    },
+    {
+      question: "Can I upgrade my plan anytime?",
+      answer:
+        "Absolutely! You can upgrade or downgrade your plan at any time. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      image: analyticalImage,
     },
   ];
 
   return (
-    <div>
-      <div>
-        <SectionHeader sectionHeaderData={sectionHeaderData} />
-      </div>
+    <div className="pt-6 ">
+      <SectionHeader sectionHeaderData={sectionHeaderData} />
 
-      <div className="flex flex-col md:flex-row justify-center items-stretch gap-8">
-        <div className="w-full md:w-1/2 flex">
-          <div className="max-w-xl mx-auto mt-20 space-y-4 flex-grow">
+      <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 min-h-[500px] py-3">
+        {/* FAQ Section */}
+        <div className="w-full h-[500px] md:w-1/2 flex items-center">
+          <div className="max-w-xl mx-auto space-y-4 w-full">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-emerald-500 rounded-lg bg-gray-900 text-white"
+                className="bg-[#c4ecb00a] rounded-lg text-white/50 py-2"
               >
                 <button
                   onClick={() => toggleFaq(index)}
@@ -63,13 +73,13 @@ const PowerfullFeatures = () => {
                 >
                   <span className="font-medium">{faq.question}</span>
                   {openIndex === index ? (
-                    <FaMinus className="text-emerald-400 w-4 h-4" />
+                    <FaMinus className=" primaryColor w-4 h-4" />
                   ) : (
-                    <FaPlus className="text-emerald-400 w-4 h-4" />
+                    <FaPlus className=" primaryColor w-4 h-4" />
                   )}
                 </button>
                 {openIndex === index && (
-                  <div className="px-4 pt-4 pb-16 text-sm text-gray-300">
+                  <div className="px-4 pt-4 pb-6 text-sm text-gray-300">
                     {faq.answer}
                   </div>
                 )}
@@ -78,20 +88,15 @@ const PowerfullFeatures = () => {
           </div>
         </div>
 
-        {/* Image with gradient background */}
-        <div className="w-full md:w-1/2 flex">
-          <div className="flex-grow p-6 flex items-center justify-center">
-            <div className="rounded-2xl bg-gray-800 p-[2px]">
-              <div className="bg-[#0f0f0f] rounded-2xl p-6 shadow-xl">
-                <Image
-                  src={analyticalImage}
-                  alt="Analytical Image"
-                  height={500}
-                  width={700}
-                  className="rounded-lg"
-                />
-              </div>
-            </div>
+        {/* Image Section */}
+        <div className="w-full min-h-[500px] md:w-1/2 flex items-center justify-center md:justify-end">
+          <div className="relative w-full h-[500px] max-w-xl">
+            <Image
+              src={faqs[openIndex ?? 0].image}
+              alt="Feature Image"
+              fill
+              className="rounded-lg object-cover "
+            />
           </div>
         </div>
       </div>

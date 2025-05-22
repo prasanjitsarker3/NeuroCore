@@ -2,47 +2,58 @@
 
 import { motion } from "framer-motion";
 
-export default function CodeEditor() {
+const CodeEditor = () => {
   const codeLines = [
-    { num: 1, code: 'import React from "react";', color: "text-emerald-400" },
+    { num: 1, code: "-- Innovation DB v1.0 🚀", color: "text-gray-500" },
+    { num: 2, code: "CREATE TABLE innovations (", color: "text-blue-400" },
+    { num: 3, code: "  id SERIAL PRIMARY KEY,", color: "text-white" },
     {
-      num: 2,
-      code: "class component extends React.Component {",
+      num: 4,
+      code: "  project_name VARCHAR(50) NOT NULL,",
       color: "text-white",
     },
-    { num: 3, code: "  render() {", color: "text-emerald-400" },
-    { num: 4, code: "    return (", color: "text-white" },
-    { num: 5, code: "      <div>", color: "text-emerald-300" },
-    { num: 6, code: "        <h1>codepunk</h1>", color: "text-emerald-300" },
+    { num: 5, code: "  tech_stack VARCHAR(100),", color: "text-white" },
     {
-      num: 7,
-      code: "        <p>This is a simple React component.</p>",
-      color: "text-emerald-300",
+      num: 6,
+      code: "  launch_date DATE DEFAULT CURRENT_DATE",
+      color: "text-white",
     },
-    { num: 8, code: "      </div>", color: "text-emerald-300" },
-    { num: 9, code: "    );", color: "text-white" },
-    { num: 10, code: "  }", color: "text-white" },
-    { num: 11, code: "}", color: "text-white" },
-    { num: 12, code: "export default codepunk;", color: "text-emerald-400" },
+    { num: 7, code: ");", color: "text-blue-400" },
+    { num: 8, code: "", color: "text-white" },
+    { num: 9, code: "INSERT INTO innovations VALUES", color: "text-green-400" },
+    {
+      num: 10,
+      code: "  (1, 'AI-Powered SQL', 'SQL, AI, Cloud', '2025-05-22');",
+      color: "text-green-400",
+    },
+    { num: 11, code: "", color: "text-white" },
+    { num: 12, code: "SELECT * FROM innovations;", color: "text-yellow-300" },
   ];
 
   return (
-    <div className="bg-gray-950 rounded-lg overflow-hidden border border-gray-800">
-      <div className="flex gap-1.5 px-3 py-2 bg-gray-900">
-        <div className="w-3 h-3 rounded-full bg-red-500"></div>
-        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+    <div className=" border border-white/5 p-4 rounded-lg">
+      <div className="flex items-center justify-between  bg-white/5 py-2 px-6 rounded-md">
+        <div className="flex gap-1.5 px-3  ">
+          <div className="w-3 h-3 rounded-full bg-red-500" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500" />
+          <div className="w-3 h-3 rounded-full bg-green-500" />
+        </div>
+        <div>
+          <span className="text-sm text-white/70 font-mono">
+            Optimized Code
+          </span>
+        </div>
       </div>
-      <div className="p-4 font-mono text-sm overflow-x-auto">
+      <div className="p-4 font-mono text-sm overflow-x-auto text-white">
         {codeLines.map((line, index) => (
           <motion.div
-            key={line.num}
+            key={line.num + line.code}
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, delay: index * 0.03 }}
+            transition={{ duration: 0.2, delay: index * 0.04 }}
             className="flex"
           >
-            <span className="w-7 text-right mr-4 text-gray-600">
+            <span className="w-8 text-right mr-4 text-gray-500 select-none">
               {line.num}
             </span>
             <span className={line.color}>{line.code}</span>
@@ -51,4 +62,6 @@ export default function CodeEditor() {
       </div>
     </div>
   );
-}
+};
+
+export default CodeEditor;

@@ -20,7 +20,7 @@ const ContactForm = () => {
           placeholder="Message"
         ></textarea>
         <input
-          className="w-full px-5 py-3.5 rounded-xl bg-amber-500  font-robotoMono tracking-tighter placeholder:text-white text-white uppercase text-sm transition-colors duration-300 cursor-pointer font-medium outline-0"
+          className="w-full px-5 py-3.5 rounded-xl bg-[#FF5F1F] font-robotoMono tracking-tighter placeholder:text-white text-white uppercase text-sm transition-colors duration-300 cursor-pointer font-medium outline-0"
           type="submit"
           value="Send Message"
         />

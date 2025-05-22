@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/images/logo.svg";
 import MobileMenu from "./MobileMenu/MobileMenu";
 
 const Header = () => {
@@ -28,7 +27,12 @@ const Header = () => {
         <div className="w-full flex justify-between items-center gap-8">
           <Link className="w-28 md:w-32" href="/">
             <figure>
-              <Image src={logo} height={20} width={130} alt="Logo" />
+              <Image
+                src={"/Wevlover.webp"}
+                height={20}
+                width={130}
+                alt="Logo"
+              />
             </figure>
           </Link>
           <div className="hidden md:flex justify-center items-center gap-2">
@@ -36,7 +40,7 @@ const Header = () => {
               <div key={menu.id}>
                 {
                   <Link
-                    className="px-5 py-1.5 rounded-2xl transition-all duration-500 text-sm font-semibold text-white hover:text-[#adff85] whitespace-nowrap uppercase"
+                    className="px-5 py-1.5 rounded-2xl transition-all duration-500 text-sm font-semibold text-white hover:text-[#FF5F1F] whitespace-nowrap uppercase"
                     href={menu.slag}
                   >
                     {menu.title}
@@ -45,7 +49,7 @@ const Header = () => {
               </div>
             ))}
           </div>
-          <button className=" bg-white/5 border border-white/5 text-white px-4 py-0.5 rounded-full text-base">
+          <button className=" bg-white/5 border border-white/5 text-white hover:bg-[#FF5F1F] transition-all duration-500 cursor-pointer px-4 py-0.5 rounded-full text-base">
             Appointment
           </button>
         </div>

@@ -11,7 +11,6 @@ import {
   LuServer,
   LuCpu,
 } from "react-icons/lu";
-import { useState } from "react";
 
 export default function PlatformIcons() {
   const platforms = [
@@ -25,27 +24,17 @@ export default function PlatformIcons() {
     { icon: <LuCpu className="h-6 w-6" />, name: "Systems" },
   ];
 
-  const [hovered, setHovered] = useState(false);
-
   return (
-    <div
-      className="space-y-4"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <div className="space-y-3">
       {[0, 1].map((row) => (
         <div key={row} className="overflow-hidden w-full">
           <motion.div
             className="flex gap-4"
             animate={{
-              x: hovered
-                ? row === 0
-                  ? ["-100%", "0%"]
-                  : ["100%", "0%"]
-                : "0%",
+              x: row === 0 ? ["-100%", "0%"] : ["100%", "0%"],
             }}
             transition={{
-              repeat: hovered ? Infinity : 0,
+              repeat: Infinity,
               duration: 6,
               ease: "linear",
             }}
@@ -53,12 +42,12 @@ export default function PlatformIcons() {
             {platforms.slice(row * 4, row * 4 + 4).map((platform) => (
               <div
                 key={platform.name}
-                className="flex flex-col items-center justify-center w-28 h-28 bg-gray-800/50 rounded-lg border border-emerald-900/50"
+                className="flex flex-col items-center justify-center"
               >
-                <div className="p-3 bg-emerald-900/30 rounded-full text-emerald-400 mb-2">
+                <div className="p-3 bg-white/5 rounded-full primaryColor mb-2">
                   {platform.icon}
                 </div>
-                <span className="text-xs text-emerald-300/80">
+                <span className="text-xs text-[#FF5F1F]/40">
                   {platform.name}
                 </span>
               </div>

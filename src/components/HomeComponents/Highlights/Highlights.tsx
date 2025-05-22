@@ -1,8 +1,6 @@
 import SectionHeader from "@/components/SharedComponent/SectionHeader/SectionHeader";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Highlights = () => {
   const sectionHeaderData = {
@@ -46,7 +44,7 @@ const Highlights = () => {
       <div className="py-7 grid grid-cols-1 md:grid-cols-3 gap-10">
         {highlights.map((highlight) => (
           <div key={highlight.id}>
-            <figure className="bg-gradient-to-b from-[#081318] to-[#0f392a] overflow-hidden rounded-xl">
+            <figure className="bg-gradient-to-b from-[#FF5F1F]/5 to-[#FF5F1F]/50 overflow-hidden rounded-xl">
               <Image
                 className="w-full h-full object-cover"
                 src={highlight.image}
@@ -55,19 +53,11 @@ const Highlights = () => {
                 width={600}
               />
             </figure>
-            <div className="pt-5">
+            <div className="  pt-1.5 md:pt-3">
               <h4 className="font-robotoMono font-bold">{highlight.title}</h4>
-              <p className="text-gray-400 font-roboto py-2">
+              <p className="text-gray-400 font-roboto pt-0.5 text-sm">
                 {highlight.description}
               </p>
-              <div className="flex">
-                <Link
-                  href="/"
-                  className="flex rounded-xl transition-colors duration-300 py-3 text-sm font-medium hover:text-white text-[#adff85] font-robotoMono"
-                >
-                  LEARN MORE <MdOutlineKeyboardArrowRight className="text-xl" />
-                </Link>
-              </div>
             </div>
           </div>
         ))}

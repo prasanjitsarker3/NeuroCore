@@ -36,7 +36,7 @@ const ContactInfo = () => {
           className="py-2 border border-[#c2f3a92a] rounded-xl p-8"
         >
           <div className="flex">
-            <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm text-[#9fec78] text-2xl">
+            <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm text-[#FF5F1F] text-2xl">
               {info.icon}
             </p>
           </div>
@@ -45,7 +45,7 @@ const ContactInfo = () => {
             <p className="font-roboto text-gray-400">{info.description}</p>
             <a
               href={info.slag}
-              className="text-[#9fec78] hover:text-white transition-colors duration-300 font-medium font-robotoMono uppercase"
+              className=" primaryColor hover:text-white transition-colors duration-300 font-medium font-robotoMono uppercase"
               target="_blank"
               rel="noopener noreferrer"
             >

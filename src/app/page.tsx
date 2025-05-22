@@ -5,7 +5,7 @@ import PowerfullFeatures from "@/components/HomeComponents/Features/PowerfullFea
 import FrameworkService from "@/components/HomeComponents/FrameworkService/FrameworkService";
 import Hero from "@/components/HomeComponents/Hero/Hero";
 import Highlights from "@/components/HomeComponents/Highlights/Highlights";
-import Testimonials from "@/components/HomeComponents/Testimonials/Testimonials";
+// import Testimonials from "@/components/HomeComponents/Testimonials/Testimonials";
 
 export default function Home() {
   return (
@@ -15,15 +15,13 @@ export default function Home() {
         <FrameworkService />
         <Highlights />
       </div>
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-2">
         <Features />
         <PowerfullFeatures />
       </div>
-      <Testimonials />
-      <div className="max-w-6xl mx-auto px-4 pt-10 md:pt-20">
-        <Blog />
-        <CTASection />
-      </div>
+      {/* <Testimonials /> */}
+      <Blog />
+      <CTASection />
     </div>
   );
 }

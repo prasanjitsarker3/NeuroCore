@@ -1,8 +1,4 @@
-import SectionHeader from "@/components/SharedComponent/SectionHeader/SectionHeader";
-import {
-  MdOutlineKeyboardArrowRight,
-  MdOutlineVerifiedUser,
-} from "react-icons/md";
+import { MdOutlineVerifiedUser } from "react-icons/md";
 import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
 import { FiUsers } from "react-icons/fi";
 import { BiCoinStack } from "react-icons/bi";
@@ -10,13 +6,6 @@ import { MdTerminal } from "react-icons/md";
 import { PiSparkleLight } from "react-icons/pi";
 
 const FrameworkService = () => {
-  const sectionHeaderData = {
-    sectionName: "Features",
-    sectionTitle: "Simple framework for your business that just works",
-    sectionDescription:
-      "Unlike traditional frameworks, we believe that randomness can lead to breakthroughs, unconventional ideas, and novel solutions.",
-    isCentered: false,
-  };
   const services = [
     {
       id: 1,
@@ -62,28 +51,26 @@ const FrameworkService = () => {
     },
   ];
   return (
-    <div>
-      <div className="flex flex-col md:flex-row gap-10 items-center justify-between">
-        <div className="w-full md:w-2/3">
-          <SectionHeader sectionHeaderData={sectionHeaderData} />
-        </div>
-        <div className="px-4">
-          <button className="flex justify-center items-center cursor-pointer rounded-xl px-6 py-3 text-sm font-medium uppercase border border-[#c2f3a92a] bg-[#c2f3a90a] text-white shadow-sm font-robotoMono hover:text-[#9fec78]">
-            Explore Features <MdOutlineKeyboardArrowRight className="text-xl" />{" "}
-          </button>
-        </div>
-      </div>
+    <div className=" ">
+      <p className=" text-3xl font-semibold text-white pb-6">
+        Simple framework for your business that just works
+      </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 mt-10 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
         {services.map((service) => (
-          <div key={service.id} className="py-5">
-            <div className="flex">
-              <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm text-[#9fec78] text-2xl">
-                {service.icon}
-              </p>
+          <div
+            key={service.id}
+            className=" border border-[#FF5F1F]/10 rounded-xl "
+          >
+            <div className=" p-5">
+              <div className="flex">
+                <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm primaryColor text-2xl">
+                  {service.icon}
+                </p>
+              </div>
+              <h4 className="font-robotoMono py-4">{service.title}</h4>
+              <p className="font-roboto text-gray-400">{service.description}</p>
             </div>
-            <h4 className="font-robotoMono py-4">{service.title}</h4>
-            <p className="font-roboto text-gray-400">{service.description}</p>
           </div>
         ))}
       </div>
