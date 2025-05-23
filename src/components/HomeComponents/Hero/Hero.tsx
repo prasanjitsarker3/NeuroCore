@@ -114,7 +114,7 @@ const Hero: React.FC = () => {
               agility. Lightning-fast performance is our promise.
             </p>
 
-            {/* Buttons */}
+            {/* Buttons    */}
             <div className="py-10 flex gap-4">
               <Link
                 href="/signup"
