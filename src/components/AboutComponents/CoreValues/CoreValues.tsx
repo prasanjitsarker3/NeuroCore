@@ -70,7 +70,7 @@ const CoreValues = () => {
             className=" border border-white/5 p-5 rounded-lg bg-[#c4ecb00a]  duration-300"
           >
             <div className="flex">
-              <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm text-[#9fec78] text-2xl">
+              <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm primaryColor text-2xl">
                 {service.icon}
               </p>
             </div>

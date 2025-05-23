@@ -3,7 +3,6 @@
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 import Link from "next/link";
-import logo from "@/assets/images/logo.svg";
 import Image from "next/image";
 
 const Footer = () => {
@@ -17,7 +16,7 @@ const Footer = () => {
               <figure>
                 <Image
                   className="cursor-pointer"
-                  src={logo}
+                  src={"/Wevlover.webp"}
                   alt="Logo"
                   width={100}
                   height={20}
@@ -108,7 +107,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="transition-colors duration-500 text-gray-400 hover:text-gray-50"
-                  href="#"
+                  href="/terms-of-service"
                 >
                   Terms of service
                 </Link>
@@ -116,7 +115,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="transition-colors duration-500 text-gray-400 hover:text-gray-50"
-                  href="#"
+                  href="privacy-policy"
                 >
                   Privacy policy
                 </Link>
