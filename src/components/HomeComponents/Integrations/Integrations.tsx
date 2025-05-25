@@ -11,6 +11,8 @@ function useWindowWidth() {
     typeof window !== "undefined" ? window.innerWidth : 1024 //handle 0 here
   );
 
+  // console.log(mount);
+
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     handleResize(); // set initial width
@@ -23,7 +25,13 @@ function useWindowWidth() {
 }
 
 const Integrations = () => {
+  const [mount, setMount] = useState(false);
   const windowWidth = useWindowWidth();
+
+  useEffect(() => {
+    setMount(true);
+  }, []);
+
   if (!windowWidth) return null;
 
   console.log(windowWidth);
@@ -40,37 +48,46 @@ const Integrations = () => {
     <div className="relative">
       <SectionHeader sectionHeaderData={sectionHeaderData} />
 
-      <motion.div
-        className="absolute z-99 bg-green-300 text-center w-4 h-1 rounded-full top-[66%]"
-        // initial={{ x: 581, opacity: 1 }}
-        initial={{ x: windowWidth > 0 ? windowWidth - 1273 : 0, opacity: 1 }}
-        animate={{
-          x: 833,
-        }}
-        transition={{
-          duration: 1.5,
-          ease: "easeOut",
-          // ease: "easeIn",
-          repeat: Number.POSITIVE_INFINITY,
-          times: [0, 0.8, 1],
-        }}
-      />
-
-      <motion.div
-        className="absolute z-10 bg-green-300 w-4 h-1 rounded-full top-[66%]"
-        // initial={{ x: 520, opacity: 1 }}
-        initial={{ x: windowWidth > 0 ? windowWidth - 1333 : 0, opacity: 1 }}
-        // x: windowWidth > 0 ? windowWidth - 1273 : 0, opacity: 1
-        animate={{
-          x: 271,
-        }}
-        transition={{
-          duration: 1.5,
-          ease: "easeOut",
-          repeat: Number.POSITIVE_INFINITY,
-          times: [0, 0.8, 1],
-        }}
-      />
+      {mount && (
+        <>
+          <motion.div
+            className="absolute z-99 bg-green-300 text-center w-4 h-1 rounded-full top-[66%]"
+            // initial={{ x: 581, opacity: 1 }}
+            initial={{
+              x: windowWidth > 0 ? windowWidth - 1273 : 0,
+              opacity: 1,
+            }}
+            animate={{
+              x: 833,
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeOut",
+              // ease: "easeIn",
+              repeat: Number.POSITIVE_INFINITY,
+              times: [0, 0.8, 1],
+            }}
+          />
+          <motion.div
+            className="absolute z-10 bg-green-300 w-4 h-1 rounded-full top-[66%]"
+            // initial={{ x: 520, opacity: 1 }}
+            initial={{
+              x: windowWidth > 0 ? windowWidth - 1333 : 0,
+              opacity: 1,
+            }}
+            // x: windowWidth > 0 ? windowWidth - 1273 : 0, opacity: 1
+            animate={{
+              x: 271,
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeOut",
+              repeat: Number.POSITIVE_INFINITY,
+              times: [0, 0.8, 1],
+            }}
+          />
+        </>
+      )}
 
       <div className="relative z-0 flex justify-center items-center pt-16">
         <Image src={integrationImage} alt="Integration image here" />

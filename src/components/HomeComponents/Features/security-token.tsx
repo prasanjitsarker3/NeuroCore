@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function SecurityToken() {
   const [token, setToken] = useState("r9H4DnOj6LVw2C");
+  const [randomBits, setRandomBits] = useState<string[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const generateToken = () => {
@@ -16,6 +17,17 @@ export default function SecurityToken() {
     }
     setToken(newToken);
   };
+
+  const generateRandomBits = () => {
+    const bits = Array.from({ length: 400 }, () =>
+      Math.random() > 0.5 ? "1" : "0"
+    );
+    setRandomBits(bits);
+  };
+
+  useEffect(() => {
+    generateRandomBits();
+  }, []);
 
   const handleMouseEnter = () => {
     generateToken();
@@ -37,9 +49,17 @@ export default function SecurityToken() {
     >
       <div className="absolute inset-0 opacity-20">
         <div className="grid grid-cols-20 h-full w-full">
-          {Array.from({ length: 400 }).map((_, i) => (
+          {/* {Array.from({ length: 400 }).map((_, i) => (
             <div key={i} className="text-[8px] text-emerald-500 opacity-30">
               {Math.random() > 0.5 ? "1" : "0"}
+            </div>
+          ))} */}
+          {randomBits.map((bit, index) => (
+            <div
+              key={index}
+              className="text-emerald-500 opacity-70 overflow-hidden"
+            >
+              {bit}
             </div>
           ))}
         </div>
