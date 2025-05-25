@@ -65,6 +65,7 @@ const Features = () => {
           {featuresData.slice(0, 2).map((feature, index) => {
             const colSpanClass =
               index === 0 ? "md:col-span-8" : "md:col-span-4";
+
             return (
               <motion.div
                 key={feature.id}
