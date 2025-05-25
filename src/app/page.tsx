@@ -6,6 +6,7 @@ import PowerfullFeatures from "@/components/HomeComponents/Features/PowerfullFea
 import FrameworkService from "@/components/HomeComponents/FrameworkService/FrameworkService";
 import Hero from "@/components/HomeComponents/Hero/Hero";
 import Highlights from "@/components/HomeComponents/Highlights/Highlights";
+import Integrations from "@/components/HomeComponents/Integrations/Integrations";
 import Testimonials from "@/components/HomeComponents/Testimonials/Testimonials";
 
 export default function Home() {
@@ -24,6 +25,9 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-4 pt-10 md:pt-20">
         <Blog />
         <CTASection />
+      </div>
+      <div className="max-w-6xl mx-auto px-4 pt-10 md:pt-20">
+        <Integrations />
       </div>
       <div className="max-w-6xl mx-auto px-4 pt-10 md:pt-20">
         <FAQ />
