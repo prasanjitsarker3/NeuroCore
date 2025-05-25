@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
             </div>
             <h1 className="text-3xl md:text-5xl font-bold py-5 leading-tight">
               Build new products <br />
-              <p className="text-amber-400 flex">
+              <div className="text-amber-400 flex">
                 <span className="text-white">for</span> &nbsp;{" "}
                 <TypewriterComponent
                   options={{
@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
                     loop: true,
                   }}
                 />
-              </p>
+              </div>
             </h1>
             <p className="text-gray-300 text-lg font-roboto mb-6 max-w-md">
               Our framework component is built to handle scaling demands with
