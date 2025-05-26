@@ -13,7 +13,7 @@ export default function CodeEditor() {
     { num: 3, code: "  render() {", color: "text-emerald-400" },
     { num: 4, code: "    return (", color: "text-white" },
     { num: 5, code: "      <div>", color: "text-emerald-300" },
-    { num: 6, code: "        <h1>codepunk</h1>", color: "text-emerald-300" },
+    { num: 6, code: "        <h1>wevloper</h1>", color: "text-emerald-300" },
     {
       num: 7,
       code: "        <p>This is a simple React component.</p>",
@@ -23,7 +23,7 @@ export default function CodeEditor() {
     { num: 9, code: "    );", color: "text-white" },
     { num: 10, code: "  }", color: "text-white" },
     { num: 11, code: "}", color: "text-white" },
-    { num: 12, code: "export default codepunk;", color: "text-emerald-400" },
+    { num: 12, code: "export default wevloper;", color: "text-emerald-400" },
   ];
 
   return (

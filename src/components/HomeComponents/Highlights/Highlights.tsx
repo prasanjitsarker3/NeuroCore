@@ -63,7 +63,7 @@ const Highlights = () => {
               <div className="flex">
                 <Link
                   href="/"
-                  className="flex rounded-xl transition-colors duration-300 py-3 text-sm font-medium hover:text-white text-[#adff85] font-robotoMono"
+                  className="flex rounded-xl transition-colors duration-300 py-3 text-sm font-medium hover:text-white text-primary font-robotoMono"
                 >
                   LEARN MORE <MdOutlineKeyboardArrowRight className="text-xl" />
                 </Link>

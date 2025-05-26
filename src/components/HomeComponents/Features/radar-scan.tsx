@@ -138,28 +138,11 @@ export default function RadarCard() {
       </div>
 
       {/* Text content */}
-      <div className="relative w-full md:w-2/5 z-10">
-        {/* <motion.h2
-          className="text-xl font-bold text-white text-center mb-2"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
-          Scan for Threats
-        </motion.h2>
-        <motion.p
-          className="text-[#a3b8cc] text-center text-sm"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          Identify and mitigate potential security risks and vulnerabilities.
-        </motion.p> */}
-      </div>
+      <div className="relative w-full md:w-2/5 z-10"></div>
 
       {/* Scan button */}
       <motion.button
-        className="relative z-10 mt-6 w-full py-2.5 bg-gradient-to-r from-[#1a3b2a] to-[#2a4b3a] text-[#4ade80] rounded-md font-medium text-sm flex items-center justify-center"
+        className="relative z-10 mt-6 w-full py-2.5 bg-gradient-to-r from-[#1a3b2a] to-[#2a4b3a] text-white rounded-md font-medium text-sm flex items-center justify-center"
         whileHover={{ scale: 1.02, backgroundColor: "#1a3b2a" }}
         whileTap={{ scale: 0.98 }}
         initial={{ opacity: 0, y: 10 }}

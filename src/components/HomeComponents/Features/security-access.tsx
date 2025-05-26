@@ -7,7 +7,7 @@ export default function SecurityAccess() {
 
   return (
     <div className="w-72 h-72  flex items-center justify-center">
-      <div className="w-28 h-28 flex items-center justify-center bg-emerald-900/30 rounded-sm text-emerald-400">
+      <div className="w-28 h-28 flex items-center justify-center bg-orange-900/30 rounded-sm text-primary">
         {platform[0].icon}
       </div>
     </div>

@@ -14,8 +14,8 @@ const ContactInfo = () => {
       id: 2,
       title: "Email",
       description: "Our friendly team is here to help.",
-      slag: "mailto:support@codepunk.com",
-      info: "support@codepunk.com",
+      slag: "mailto:support@cwevloper.com",
+      info: "support@wevloper.com",
       icon: <MdOutlineVerifiedUser />,
     },
     {

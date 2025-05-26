@@ -126,7 +126,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           {/* Code Tabs */}
-          <div className=" col-span-12 md:col-span-6 lg:col-span-5 border overflow-hidden border-[#c2f3a92a] bg-[#c2f3a90a] rounded-lg shadow-md z-10">
+          <div className=" col-span-12 md:col-span-6 lg:col-span-5 border overflow-hidden border-orange-900/50 bg-orange-950/50 rounded-lg shadow-md z-10">
             <div className="grid grid-cols-5 ">
               {technologies.map((tech) => (
                 <button

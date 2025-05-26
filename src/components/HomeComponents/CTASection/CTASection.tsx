@@ -20,7 +20,7 @@ const CTASection = () => {
             <div className="mt-8 flex flex-col md:flex-row gap-4">
               <Link
                 href="/signup"
-                className="flex justify-center items-center rounded-xl bg-[#adff85] px-6 py-3 text-sm font-medium text-black shadow-sm font-robotoMono hover:bg-[#9fec78]"
+                className="flex justify-center items-center rounded-xl bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm font-robotoMono"
               >
                 GET STARTED <MdOutlineKeyboardArrowRight className="text-xl" />{" "}
               </Link>

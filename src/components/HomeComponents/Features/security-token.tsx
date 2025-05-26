@@ -49,11 +49,6 @@ export default function SecurityToken() {
     >
       <div className="absolute inset-0 opacity-20">
         <div className="grid grid-cols-20 h-full w-full">
-          {/* {Array.from({ length: 400 }).map((_, i) => (
-            <div key={i} className="text-[8px] text-emerald-500 opacity-30">
-              {Math.random() > 0.5 ? "1" : "0"}
-            </div>
-          ))} */}
           {randomBits.map((bit, index) => (
             <div
               key={index}
@@ -69,7 +64,7 @@ export default function SecurityToken() {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-gray-800/80 backdrop-blur-sm px-6 py-4 rounded-lg border border-emerald-800 relative z-10"
+        className="bg-gray-800/80 backdrop-blur-sm px-6 py-4 rounded-lg border border-orange-800 relative z-10"
       >
         <motion.div
           initial={{ opacity: 0 }}

@@ -75,7 +75,7 @@ const Features = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className={`${colSpanClass} col-span-1 bg-gray-900/50 backdrop-blur-sm p-4 pb-40 md:pb-38 lg:pb-32 rounded-xl border border-emerald-900/50 relative`}
+                className={`${colSpanClass} col-span-1 bg-gray-900/50 backdrop-blur-sm p-4 pb-40 md:pb-38 lg:pb-32 rounded-xl border border-orange-900/50 relative`}
               >
                 {feature.component}
                 <div className="absolute bottom-6">
@@ -101,7 +101,7 @@ const Features = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="relative bg-gray-900/50 backdrop-blur-sm p-6 pb-40 md:24 rounded-xl border border-emerald-900/50"
+              className="relative bg-gray-900/50 backdrop-blur-sm p-6 pb-40 md:24 rounded-xl border border-orange-900/50"
             >
               {feature.component}
               <div className="absolute bottom-6">

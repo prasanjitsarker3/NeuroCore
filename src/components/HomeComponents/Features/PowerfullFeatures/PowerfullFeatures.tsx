@@ -54,7 +54,7 @@ const PowerfullFeatures = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-emerald-500 rounded-lg bg-gray-900 text-white"
+                className="border border-gray-600 rounded-lg bg-gray-900 text-white"
               >
                 <button
                   onClick={() => toggleFaq(index)}
@@ -62,9 +62,9 @@ const PowerfullFeatures = () => {
                 >
                   <span className="font-medium">{faq.question}</span>
                   {openIndex === index ? (
-                    <FaMinus className="text-emerald-400 w-4 h-4" />
+                    <FaMinus className="text-primary w-4 h-4" />
                   ) : (
-                    <FaPlus className="text-emerald-400 w-4 h-4" />
+                    <FaPlus className="text-primary w-4 h-4" />
                   )}
                 </button>
                 {openIndex === index && (

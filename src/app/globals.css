@@ -56,3 +56,6 @@ body {
 .text-primary {
   color: var(--primary-color);
 }
+.bg-primary {
+  background-color: var(--primary-color);
+}

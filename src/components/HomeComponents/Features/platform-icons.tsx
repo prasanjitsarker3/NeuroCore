@@ -53,14 +53,11 @@ export default function PlatformIcons() {
             {platforms.slice(row * 4, row * 4 + 4).map((platform) => (
               <div
                 key={platform.name}
-                className="flex flex-col items-center justify-center w-28 h-28 bg-gray-800/50 rounded-lg border border-emerald-900/50"
+                className="flex flex-col items-center justify-center w-28 h-fit p-1 bg-gray-800/50 rounded-lg border border-orange-900/50"
               >
-                <div className="p-3 bg-emerald-900/30 rounded-full text-emerald-400 mb-2">
+                <div className="p-3 bg-primary-900/30 rounded-full text-primary mb-2">
                   {platform.icon}
                 </div>
-                <span className="text-xs text-emerald-300/80">
-                  {platform.name}
-                </span>
               </div>
             ))}
           </motion.div>
