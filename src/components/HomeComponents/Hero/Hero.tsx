@@ -90,18 +90,19 @@ const Hero: React.FC = () => {
         <div className=" grid grid-cols-6 md:grid-cols-6 lg:grid-cols-12 items-center gap-6">
           <div className=" col-span-12 md:col-span-6 lg:col-span-7">
             <div>
-              <p className=" text-amber-400 hover:text-white transition-all duration-500 font-robotoMono flex items-center gap-3 cursor-pointer">
-                <span className="border-l-2 border-amber-400 h-4 w-0.5"></span>{" "}
+              <p className=" text-primary hover:text-white transition-all duration-500 font-robotoMono flex items-center gap-3 cursor-pointer">
+                <span className="border-l-2 h-4 w-0.5"></span>{" "}
                 <span>Watch our event</span> <FaArrowRight />
               </p>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold py-5 leading-tight">
-              Build new products <br />
-              <div className="text-amber-400 flex">
-                <span className="text-white">for</span> &nbsp;{" "}
+              We build software that helps
+              <br />
+              <div className="text-primary flex">
+                <span className="text-white">businesses</span> &nbsp;{" "}
                 <TypewriterComponent
                   options={{
-                    strings: ["developers", "startups", "customers"],
+                    strings: ["grow", "expand", "develop", "thrive"],
                     autoStart: true,
                     loop: true,
                   }}
@@ -109,17 +110,18 @@ const Hero: React.FC = () => {
               </div>
             </h1>
             <p className="text-gray-300 text-lg font-roboto mb-6 max-w-md">
-              Our framework component is built to handle scaling demands with
-              agility. Lightning-fast performance is our promise.
+              We help startups and enterprises grow by building purpose-driven,
+              scalable software solutions.
             </p>
 
             {/* Buttons */}
             <div className="py-10 flex gap-4">
               <Link
                 href="/signup"
-                className="flex justify-center items-center rounded-xl bg-white/5 px-6 py-2 text-sm font-medium text-white hover:text-amber-400 font-robotoMono z-10"
+                className="flex justify-center items-center rounded-xl bg-white/5 px-6 py-2 text-sm font-medium text-primary hover:text-white font-robotoMono z-10"
               >
-                GET STARTED <MdOutlineKeyboardArrowRight className="text-xl" />{" "}
+                GET STARTED
+                <MdOutlineKeyboardArrowRight className="text-xl text-primary" />
               </Link>
             </div>
           </div>

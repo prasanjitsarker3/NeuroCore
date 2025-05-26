@@ -12,9 +12,10 @@ import { PiSparkleLight } from "react-icons/pi";
 const FrameworkService = () => {
   const sectionHeaderData = {
     sectionName: "Features",
-    sectionTitle: "Simple framework for your business that just works",
+    sectionTitle:
+      "We Don’t Just Build Software—We Build SaaS That Solves Real Problems",
     sectionDescription:
-      "Unlike traditional frameworks, we believe that randomness can lead to breakthroughs, unconventional ideas, and novel solutions.",
+      "We focus on what matters—building software that solves problems, scales fast, and drives growth.",
     isCentered: false,
   };
   const services = [

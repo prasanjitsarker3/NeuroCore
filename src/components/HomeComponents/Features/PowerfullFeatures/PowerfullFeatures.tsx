@@ -4,8 +4,7 @@ import SectionHeader from "@/components/SharedComponent/SectionHeader/SectionHea
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import analyticalImage from "../../../../../public/analytical.svg";
-
+import analyticalImage from "@/assets/images/clients/analytical.svg";
 const PowerfullFeatures = () => {
   const sectionHeaderData = {
     sectionName: "Features",

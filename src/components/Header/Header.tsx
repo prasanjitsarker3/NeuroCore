@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/images/logo.svg";
 import MobileMenu from "./MobileMenu/MobileMenu";
+import logo from "@/assets/images/logo.webp";
 
 const Header = () => {
   const links = [

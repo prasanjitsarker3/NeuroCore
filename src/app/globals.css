@@ -3,6 +3,7 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --primary-color: #ff5f1f;
 }
 
 .font-robotoMono {
@@ -49,4 +50,9 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Colors */
+.text-primary {
+  color: var(--primary-color);
 }
