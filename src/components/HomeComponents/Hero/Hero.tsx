@@ -87,8 +87,8 @@ const Hero: React.FC = () => {
     <section className=" text-white pt-10">
       {/* Header */}
       <div className=" max-w-6xl mx-auto px-2">
-        <div className=" grid grid-cols-12 gap-6">
-          <div className=" col-span-7">
+        <div className=" grid grid-cols-6 md:grid-cols-6 lg:grid-cols-12 items-center gap-6">
+          <div className=" col-span-12 md:col-span-6 lg:col-span-7">
             <div>
               <p className=" text-amber-400 hover:text-white transition-all duration-500 font-robotoMono flex items-center gap-3 cursor-pointer">
                 <span className="border-l-2 border-amber-400 h-4 w-0.5"></span>{" "}
@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           {/* Code Tabs */}
-          <div className=" col-span-5 border overflow-hidden border-[#c2f3a92a] bg-[#c2f3a90a] rounded-lg shadow-md z-10">
+          <div className=" col-span-12 md:col-span-6 lg:col-span-5 border overflow-hidden border-[#c2f3a92a] bg-[#c2f3a90a] rounded-lg shadow-md z-10">
             <div className="grid grid-cols-5 ">
               {technologies.map((tech) => (
                 <button
