@@ -138,8 +138,8 @@ export default function RadarCard() {
       </div>
 
       {/* Text content */}
-      <div className="relative z-10">
-        <motion.h2
+      <div className="relative w-full md:w-2/5 z-10">
+        {/* <motion.h2
           className="text-xl font-bold text-white text-center mb-2"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export default function RadarCard() {
           transition={{ delay: 0.5, duration: 0.5 }}
         >
           Identify and mitigate potential security risks and vulnerabilities.
-        </motion.p>
+        </motion.p> */}
       </div>
 
       {/* Scan button */}
@@ -177,7 +177,7 @@ export default function RadarCard() {
             repeat: scanning ? Number.POSITIVE_INFINITY : 0,
           }}
         >
-          {scanning ? "Scanning..." : "Start Scan"}
+          {scanning ? "Scanning . . ." : "Start Scan"}
         </motion.span>
       </motion.button>
     </motion.div>

@@ -28,8 +28,9 @@ const Features = () => {
     },
     {
       id: 2,
-      title: "Scan for Threats",
+      title: "Scaning for threads",
       component: <RadarScan />,
+      description: "Scanning for threats means detecting security risks.",
     },
     {
       id: 3,
@@ -64,7 +65,9 @@ const Features = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {featuresData.slice(0, 2).map((feature, index) => {
             const colSpanClass =
-              index === 0 ? "md:col-span-8" : "md:col-span-4";
+              index === 0
+                ? "md:col-span-7 lg:col-span-8"
+                : "md:col-span-5 lg:col-span-4";
 
             return (
               <motion.div
@@ -72,17 +75,19 @@ const Features = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className={`${colSpanClass} col-span-1 bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-emerald-900/50`}
+                className={`${colSpanClass} col-span-1 bg-gray-900/50 backdrop-blur-sm p-4 pb-40 md:pb-38 lg:pb-32 rounded-xl border border-emerald-900/50 relative`}
               >
                 {feature.component}
-                <div className="flex items-center gap-2 mb-4">
-                  <h2 className="text-xl font-semibold">{feature.title}</h2>
+                <div className="absolute bottom-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <h2 className="text-xl font-semibold">{feature.title}</h2>
+                  </div>
+                  {feature.description && (
+                    <p className="mt-4 text-sm text-gray-300">
+                      {feature.description}
+                    </p>
+                  )}
                 </div>
-                {feature.description && (
-                  <p className="mt-4 text-sm text-gray-300">
-                    {feature.description}
-                  </p>
-                )}
               </motion.div>
             );
           })}
@@ -96,17 +101,19 @@ const Features = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-emerald-900/50"
+              className="relative bg-gray-900/50 backdrop-blur-sm p-6 pb-40 md:24 rounded-xl border border-emerald-900/50"
             >
               {feature.component}
-              <div className="flex items-center gap-2 mb-4">
-                <h2 className="text-xl font-semibold">{feature.title}</h2>
+              <div className="absolute bottom-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <h2 className="text-xl font-semibold">{feature.title}</h2>
+                </div>
+                {feature.description && (
+                  <p className="mt-4 text-sm text-gray-300">
+                    {feature.description}
+                  </p>
+                )}
               </div>
-              {feature.description && (
-                <p className="mt-4 text-sm text-gray-300">
-                  {feature.description}
-                </p>
-              )}
             </motion.div>
           ))}
         </div>
