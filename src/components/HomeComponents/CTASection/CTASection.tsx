@@ -32,7 +32,7 @@ const CTASection = () => {
               </Link>
             </div>
           </div>
-          <div className="h-full">
+          <div className="h-full hidden lg:block lg:w-8/12 z-10">
             <div className=" w-full h-full ">
               <figure className="h-full ">
                 <Image
