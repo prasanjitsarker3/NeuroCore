@@ -7,9 +7,9 @@ import dotedImage from "@/assets/images/doted.avif";
 const CTASection = () => {
   return (
     <div className=" max-w-6xl mx-auto px-4">
-      <section className="relative  pb-8">
+      <section className="relative pb-8">
         <div className="relative overflow-hidden rounded-xl px-8 md:px-16 md:py-24 lg:flex lg:items-center">
-          <div className="lg:w-1/2 lg:pr-8 pt-16">
+          <div className="lg:w-1/2 lg:pr-8 pt-16 lg:pt-4">
             <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
               Get started today
             </h2>
@@ -32,7 +32,7 @@ const CTASection = () => {
               </Link>
             </div>
           </div>
-          <div className="h-full hidden lg:block lg:w-8/12 z-10">
+          <div className="h-full hidden lg:block lg:w-9/12 z-10">
             <div className=" w-full h-full ">
               <figure className="h-full ">
                 <Image

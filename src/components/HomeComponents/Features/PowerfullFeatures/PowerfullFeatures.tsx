@@ -43,14 +43,14 @@ const PowerfullFeatures = () => {
   ];
 
   return (
-    <div>
-      <div>
+    <div className="max-w-6xl my-32">
+      <div className="mb-16 md:12">
         <SectionHeader sectionHeaderData={sectionHeaderData} />
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center items-stretch gap-8">
+      <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 md:gap-0 lg:gap-4">
         <div className="w-full md:w-1/2 flex">
-          <div className="max-w-xl mx-auto mt-20 space-y-4 flex-grow">
+          <div className="max-w-xl mx-auto mt-8 md:mt-8 lg:mt-16 xl:mt-24  space-y-4 flex-grow">
             {faqs.map((faq, index) => (
               <div
                 key={index}
@@ -58,7 +58,7 @@ const PowerfullFeatures = () => {
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-4 py-3 flex items-center justify-between text-left"
+                  className="w-full px-4 py-3 md:py-3 lg:py-3 flex items-center justify-between text-left"
                 >
                   <span className="font-medium">{faq.question}</span>
                   {openIndex === index ? (
@@ -68,7 +68,7 @@ const PowerfullFeatures = () => {
                   )}
                 </button>
                 {openIndex === index && (
-                  <div className="px-4 pt-4 pb-16 text-sm text-gray-300">
+                  <div className="px-4 pt-4 md:pt-0 lg:pt-4 pb-16 md:pb-0 lg:pb-12 xl:pb-16 text-sm text-gray-300">
                     {faq.answer}
                   </div>
                 )}
@@ -79,9 +79,9 @@ const PowerfullFeatures = () => {
 
         {/* Image with gradient background */}
         <div className="w-full md:w-1/2 flex">
-          <div className="flex-grow p-6 flex items-center justify-center">
+          <div className="flex-grow p-2 md:p-6 flex items-center justify-center">
             <div className="rounded-2xl bg-gray-800 p-[2px]">
-              <div className="bg-[#0f0f0f] rounded-2xl p-6 shadow-xl">
+              <div className="bg-[#0f0f0f] rounded-2xl shadow-xl">
                 <Image
                   src={analyticalImage}
                   alt="Analytical Image"

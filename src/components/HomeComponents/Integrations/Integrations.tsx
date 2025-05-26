@@ -42,7 +42,7 @@ const Integrations = () => {
   };
 
   return (
-    <div>
+    <div className="my-32">
       <div className="my-10 md:my-20 mb-40 md:mb-8">
         <SectionHeader sectionHeaderData={sectionHeaderData} />
       </div>
