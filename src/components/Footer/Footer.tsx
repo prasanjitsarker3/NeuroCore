@@ -10,7 +10,6 @@ const Footer = () => {
     <footer className="bg-[#060f11] text-white">
       <div className="font-robotoMono max-w-6xl mx-auto px-2 pt-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
-          {/* Logo and Socials */}
           <div>
             <Link href="/">
               <figure>
