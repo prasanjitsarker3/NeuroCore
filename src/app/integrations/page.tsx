@@ -10,10 +10,6 @@ const integrations = () => {
       <PopularApps />
       <IntegrationCategories />
       <CTASection />
-      {/* <div className="max-w-[1250px] mx-auto px-4 pt-10 md:pt-20">
-                <IntegratorService />
-                <CTASection />
-            </div> */}
     </div>
   );
 };

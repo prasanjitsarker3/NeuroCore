@@ -8,7 +8,7 @@ import {
   AirtableIcon,
   MondayIcon,
   ArcIcon,
-} from "./icon";
+} from "../../components/Common/icon";
 
 const apps = [
   {

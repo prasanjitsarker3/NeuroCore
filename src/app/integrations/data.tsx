@@ -12,7 +12,7 @@ import {
   LoomIcon,
   IntercomIcon,
   DiscordIcon,
-} from "./icon";
+} from "../../components/Common/icon";
 
 export interface AppData {
   name: string;
