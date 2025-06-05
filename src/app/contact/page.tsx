@@ -12,9 +12,9 @@ const page = () => {
   };
 
   return (
-    <div className="bg-[#060f11] -mt-20">
+    <div className="bg-[#060f11] mt-16">
       <div className=" max-w-6xl mx-auto px-2 pt-10 md:pt-16">
-        <div className="py-10 w-full md:w-5/12 mx-auto">
+        <div className=" py-5 md:py-10 w-full md:w-5/12 mx-auto">
           <PageHeader pageHeaderData={pageHeaderData} />
         </div>
         <div className="flex flex-col md:flex-row gap-8 md:gap-24 mt-10 justify-between">

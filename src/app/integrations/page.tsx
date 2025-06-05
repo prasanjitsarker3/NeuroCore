@@ -5,7 +5,7 @@ import CTASection from "@/components/HomeComponents/CTASection/CTASection";
 
 const integrations = () => {
   return (
-    <div className="bg-[#060f11] -mt-20">
+    <div className="bg-[#060f11] mt-16">
       <HeroIntegrations />
       <PopularApps />
       <IntegrationCategories />

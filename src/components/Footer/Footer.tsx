@@ -7,9 +7,9 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#060f11] text-white">
+    <footer className="bg-[#060f11] text-white px-3 md:px-0">
       <div className="font-robotoMono max-w-6xl mx-auto px-2 pt-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5  gap-4 md:gap-10">
           <div>
             <Link href="/">
               <figure>
@@ -150,7 +150,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="mt-10 flex flex-col-reverse md:flex-row gap-4 justify-between items-center border-t border-gray-500 py-6">
           <p className="text-gray-200 tracking-tight text-sm">
-            © 2025 Codepunk. All rights reserved.
+            © 2025 Wevloper. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-[#adff85] inline-block"></span>

@@ -7,7 +7,7 @@ const PageHeader: React.FC<PageHeaderType> = ({ pageHeaderData }) => {
       <h1
         className={`${
           pageHeaderData.isCentered ? "text-center" : "text-left"
-        } text-white font-bold text-3xl md:text-6xl py-5`}
+        }  primaryColor md:text-white font-bold text-3xl md:text-6xl py-5`}
       >
         {pageHeaderData.sectionTitle}
       </h1>

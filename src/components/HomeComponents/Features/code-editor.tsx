@@ -23,7 +23,7 @@ const CodeEditor = () => {
     { num: 9, code: "INSERT INTO innovations VALUES", color: "text-green-400" },
     {
       num: 10,
-      code: "  (1, 'AI-Powered SQL', 'SQL, AI, Cloud', '2025-05-22');",
+      code: "  (1, 'AI-Powered SQL', 'SQL, AI, Cloud');",
       color: "text-green-400",
     },
     { num: 11, code: "", color: "text-white" },
@@ -31,8 +31,8 @@ const CodeEditor = () => {
   ];
 
   return (
-    <div className=" border border-white/5 p-4 rounded-lg">
-      <div className="flex items-center justify-between  bg-white/5 py-2 px-6 rounded-md">
+    <div className=" border border-white/5 p-2 md:p-4 rounded-lg">
+      <div className="flex items-center justify-between  bg-white/5 py-2 px-2 md:px-6 rounded-md">
         <div className="flex gap-1.5 px-3  ">
           <div className="w-3 h-3 rounded-full bg-red-500" />
           <div className="w-3 h-3 rounded-full bg-yellow-500" />
@@ -44,7 +44,7 @@ const CodeEditor = () => {
           </span>
         </div>
       </div>
-      <div className="p-4 font-mono text-sm overflow-x-auto text-white">
+      <div className=" p-2 md:p-4 font-mono text-[10px] md:text-sm overflow-x-auto text-white">
         {codeLines.map((line, index) => (
           <motion.div
             key={line.num + line.code}
@@ -53,7 +53,7 @@ const CodeEditor = () => {
             transition={{ duration: 0.2, delay: index * 0.04 }}
             className="flex"
           >
-            <span className="w-8 text-right mr-4 text-gray-500 select-none">
+            <span className="w-8 text-right mr-2 text-gray-500 select-none">
               {line.num}
             </span>
             <span className={line.color}>{line.code}</span>

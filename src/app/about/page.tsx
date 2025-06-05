@@ -12,7 +12,7 @@ const page = () => {
   };
 
   return (
-    <div className="bg-[#060f11] -mt-20">
+    <div className="bg-[#060f11]">
       <div className="max-w-6xl mx-auto px-4 pt-20">
         <div className="py-10">
           <PageHeader pageHeaderData={pageHeaderData} />

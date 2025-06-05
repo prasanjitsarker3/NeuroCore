@@ -25,20 +25,10 @@ export default function PlatformIcons() {
   ];
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 w-full h-full  flex flex-col justify-center items-center">
       {[0, 1].map((row) => (
-        <div key={row} className="overflow-hidden w-full">
-          <motion.div
-            className="flex gap-4"
-            animate={{
-              x: row === 0 ? ["-100%", "0%"] : ["100%", "0%"],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 6,
-              ease: "linear",
-            }}
-          >
+        <div key={row} className="overflow-hidden w-full ">
+          <motion.div className="flex justify-center gap-4">
             {platforms.slice(row * 4, row * 4 + 4).map((platform) => (
               <div
                 key={platform.name}

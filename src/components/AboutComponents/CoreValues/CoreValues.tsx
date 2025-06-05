@@ -63,19 +63,21 @@ const CoreValues = () => {
       <div className="max-w-xl mx-auto">
         <SectionHeader sectionHeaderData={sectionHeaderData} />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 py-10">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mt-10 py-10">
         {services.map((service) => (
           <div
             key={service.id}
-            className=" border border-white/5 p-5 rounded-lg bg-[#c4ecb00a]  duration-300"
+            className=" border border-white/5 p-3 md:p-5 rounded-lg bg-[#c4ecb00a]  duration-300"
           >
             <div className="flex">
-              <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm primaryColor text-2xl">
+              <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm primaryColor text-lg md:text-2xl">
                 {service.icon}
               </p>
             </div>
-            <h4 className="font-robotoMono py-4">{service.title}</h4>
-            <p className="font-roboto text-gray-400 w-11/12">
+            <h4 className="font-robotoMono text-base md:text-lg py-2 md:py-4">
+              {service.title}
+            </h4>
+            <p className="font-roboto text-gray-400 text-xs md:text-sm w-11/12">
               {service.description}
             </p>
           </div>

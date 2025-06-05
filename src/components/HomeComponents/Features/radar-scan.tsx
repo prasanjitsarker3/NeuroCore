@@ -17,7 +17,7 @@ export default function RadarCard() {
 
   return (
     <motion.div
-      className="relative w-full flex flex-col justify-center items-center max-w-sm rounded-xl overflow-hidden p-6"
+      className="relative w-full flex flex-col justify-center items-center max-w-sm rounded-xl overflow-hidden p-2 md:p-6 border border-white/5"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}

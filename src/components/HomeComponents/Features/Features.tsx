@@ -55,7 +55,7 @@ const Features = () => {
 
   return (
     <div className="">
-      <div className="my-10">
+      <div className=" my-5 md:my-10">
         <SectionHeader sectionHeaderData={sectionHeaderData} />
       </div>
 
@@ -70,7 +70,7 @@ const Features = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className={`${colSpanClass} col-span-1 bg-[#c4ecb00a] p-5 rounded-xl `}
+                className={`${colSpanClass} col-span-1 bg-none md:bg-[#c4ecb00a] p-5 rounded-xl `}
               >
                 {feature.component}
               </motion.div>
@@ -80,23 +80,25 @@ const Features = () => {
 
         {/* Remaining features */}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuresData.slice(2).map((feature, index) => (
-            <motion.div
-              key={feature.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="bg-[#c4ecb00a] p-6 rounded-xl flex flex-col"
-            >
-              <div className="flex-grow">{feature.component}</div>
-              <div className="mt-auto">
-                <h1 className="text-center text-[#FF5F1F]/70 text-lg font-medium border-0 bg-none">
-                  {feature.title}
-                </h1>
-              </div>
-            </motion.div>
-          ))}
+        <div className=" px-5 md:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+            {featuresData.slice(2).map((feature, index) => (
+              <motion.div
+                key={feature.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                className="bg-[#c4ecb00a] p-6 rounded-xl flex flex-col"
+              >
+                <div className="flex-grow">{feature.component}</div>
+                <div className="mt-auto">
+                  <h1 className="text-center text-[#FF5F1F]/70 text-lg font-medium border-0 bg-none">
+                    {feature.title}
+                  </h1>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </main>
     </div>

@@ -37,8 +37,8 @@ const Highlights = () => {
     },
   ];
   return (
-    <div className="py-14">
-      <div className="max-w-2xl mx-auto">
+    <div className=" py-6 md:py-14 px-4 md:px-0">
+      <div className="max-w-2xl mx-auto primaryColor md:text-white">
         <SectionHeader sectionHeaderData={sectionHeaderData} />
       </div>
       <div className="py-7 grid grid-cols-1 md:grid-cols-3 gap-10">

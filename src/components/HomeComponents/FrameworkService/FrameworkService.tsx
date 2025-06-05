@@ -52,24 +52,28 @@ const FrameworkService = () => {
   ];
   return (
     <div className=" ">
-      <p className=" text-3xl font-semibold text-white pb-6">
+      <p className=" text-xl text-center md:text-start md:text-3xl font-semibold primaryColor md:text-white pb-6">
         Simple framework for your business that just works
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 ">
         {services.map((service) => (
           <div
             key={service.id}
             className=" border border-[#FF5F1F]/10 rounded-xl "
           >
-            <div className=" p-5">
+            <div className=" p-2 md:p-5">
               <div className="flex">
-                <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm primaryColor text-2xl">
+                <p className="flex justify-center items-center cursor-pointer rounded-md p-2 font-medium border border-[#c2f3a92a] bg-[#c2f3a90a] shadow-sm primaryColor text-lg md:text-2xl">
                   {service.icon}
                 </p>
               </div>
-              <h4 className="font-robotoMono py-4">{service.title}</h4>
-              <p className="font-roboto text-gray-400">{service.description}</p>
+              <h4 className=" text-xs md:text-lg font-robotoMono py-4">
+                {service.title}
+              </h4>
+              <p className=" text-xs md:text-base font-roboto text-gray-400">
+                {service.description}
+              </p>
             </div>
           </div>
         ))}
