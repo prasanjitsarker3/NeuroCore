@@ -1,8 +1,11 @@
 "use client";
 
 import type React from "react";
+import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Loader2 } from "lucide-react";
 
-import { useState } from "react";
+type FormStatus = "idle" | "loading" | "success" | "error";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +14,24 @@ const ContactForm = () => {
     message: "",
   });
 
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+
+    if (status === "success" || status === "error") {
+      timer = setTimeout(() => {
+        setStatus("idle");
+        setErrorMessage("");
+      }, 4000);
+    }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [status]);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -18,12 +39,68 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
-    alert("Message sent successfully!");
-    setFormData({ fullName: "", email: "", message: "" });
+    setStatus("loading");
+
+    const templateParams = {
+      title: "Contact Request",
+      name: formData.fullName,
+      email: formData.email,
+      message: formData.message,
+      time: new Date().toLocaleString(),
+    };
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      setFormData({ fullName: "", email: "", message: "" });
+      setStatus("success");
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus("error");
+      setErrorMessage("Failed to send message. Please try again later.");
+    }
+  };
+
+  const renderSubmitButton = () => {
+    switch (status) {
+      case "loading":
+        return (
+          <button
+            className="w-full px-5 py-3.5 rounded-full bg-[#FF5F1F] font-robotoMono tracking-tighter text-white uppercase text-sm flex items-center justify-center gap-2 cursor-not-allowed opacity-80"
+            disabled
+          >
+            <Loader2 className="h-4 w-4 animate-spin" />
+            Sending...
+          </button>
+        );
+      case "success":
+        return (
+          <div className="w-full px-5 py-3.5 rounded-full bg-green-600 font-robotoMono tracking-tighter text-white uppercase text-sm flex items-center justify-center">
+            Message Sent Successfully!
+          </div>
+        );
+      case "error":
+        return (
+          <div className="w-full px-5 py-3.5 rounded-full bg-red-600 font-robotoMono tracking-tighter text-white uppercase text-sm flex items-center justify-center">
+            {errorMessage}
+          </div>
+        );
+      default:
+        return (
+          <input
+            className="w-full px-5 py-3.5 rounded-full bg-[#FF5F1F] font-robotoMono tracking-tighter placeholder:text-white text-white uppercase text-sm transition-colors duration-300 cursor-pointer font-medium outline-0 hover:bg-[#e5541c]"
+            type="submit"
+            value="Send Message"
+          />
+        );
+    }
   };
 
   return (
@@ -57,11 +134,12 @@ const ContactForm = () => {
         placeholder="Message"
         required
       ></textarea>
-      <input
+      {/* <input
         className="w-full px-5 py-3.5 rounded-full bg-[#FF5F1F] font-robotoMono tracking-tighter placeholder:text-white text-white uppercase text-sm transition-colors duration-300 cursor-pointer font-medium outline-0 hover:bg-[#e5541c]"
         type="submit"
         value="Send Message"
-      />
+      /> */}
+      {renderSubmitButton()}
     </form>
   );
 };

@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   publisher: "Wevloper",
   metadataBase: new URL("https://www.wevloper.com"),
   icons: {
-    icon: "/Wevloper.webp", // Ensure it's a valid favicon-size icon (e.g., 32x32 or 48x48)
-    shortcut: "/favicon.ico", // Add this fallback
-    apple: "/apple-touch-icon.png", // Optional but great for iOS
+    icon: "/Wevlover.webp",
+    shortcut: "/Wevlover.webp",
+    apple: "/Wevlover.webp",
   },
   manifest: "/site.webmanifest",
 
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     siteName: "Wevloper",
     images: [
       {
-        url: "/Wevloper.webp", // Ensure this is 1200x630 for optimal social sharing
+        url: "/CodingStation.avif",
         width: 1200,
         height: 630,
         alt: "Wevloper – Innovative Solutions",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "Wevloper – Software for Innovation",
     description: "Innovative digital products built by Wevloper.",
     site: "@Wevloper",
-    images: ["/Wevloper.webp"],
+    images: ["/WorkStationWB.avif"],
   },
 };
 
